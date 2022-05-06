@@ -40,6 +40,8 @@ html {
 	align-items: center;
 }
 .avatar {
+    display: flex;
+    justify-content: center;
 	width: 150px;
 	height: 150px;
 	box-sizing: border-box;
@@ -50,7 +52,14 @@ html {
 	transform: translatey(0px);
 	animation: float 6s ease-in-out infinite;
 }
+.avatar a {
+    display: flex;
+    justify-content: center;
+    width: 100%; 
+    object-fit: cover;
+}
 img { 
+    object-fit: cover;
     width: 100%; 
     height: auto; 
 }
@@ -76,7 +85,7 @@ h2{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 15px;
+    padding-top: 2.5rem;
 }
 .img-container {
     width: 40%;
@@ -85,11 +94,37 @@ img{
     width: 100%;
 }
 #author{
-    font-size: 1.3rem;
+    font-size: 2rem;
+    padding: 1rem 0 .5rem 0;
 }
 #job{
-    font-size: 1rem;
+    font-size: 1.5rem;
 }
 #info{
-    font-size: .75rem;
+    font-size: 1rem;
+    text-align: center;
+    padding-top: 1rem;
+}
+
+.button-container{
+    padding-top: 3em;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+.prev-btn, .next-btn, .random-btn{
+    font-size: 1.2rem;
+    padding: .3rem 1.7rem .3rem 1.7rem;
+    border-radius: 10px;
+    border-color: #FFFFFF;
+    color: #FFFFFF;
+    cursor: pointer;
+    background: rgb(26, 188, 156);
+	background: -moz-linear-gradient(-45deg, rgba(26, 188, 156, 1) 0%, rgba(142, 68, 173, 1) 100%);
+	background: -webkit-linear-gradient(-45deg, rgba(26, 188, 156, 1) 0%, rgba(142, 68, 173, 1) 100%);
+	background: linear-gradient(135deg, rgba(26, 188, 156, 1) 0%, rgba(142, 68, 173, 1) 100%);
+}
+
+.random-btn{
+    margin-top: 1.5rem
 }
