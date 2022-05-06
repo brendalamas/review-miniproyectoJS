@@ -2,8 +2,8 @@
 const reviews = [
     {
       id: 1,
-      name: "susan smith",
-      job: "web developer",
+      name: "Susan Smith",
+      job: "Web Developer",
       img:
         "https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883334/person-1_rfzshl.jpg",
       text:
@@ -11,8 +11,8 @@ const reviews = [
     },
     {
       id: 2,
-      name: "anna johnson",
-      job: "web designer",
+      name: "Anna Johnson",
+      job: "Web Designer",
       img:
         "https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883409/person-2_np9x5l.jpg",
       text:
@@ -20,8 +20,8 @@ const reviews = [
     },
     {
       id: 3,
-      name: "peter jones",
-      job: "intern",
+      name: "Peter Jones",
+      job: "Intern",
       img:
         "https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883417/person-3_ipa0mj.jpg",
       text:
@@ -29,8 +29,8 @@ const reviews = [
     },
     {
       id: 4,
-      name: "bill anderson",
-      job: "the boss",
+      name: "Bill Anderson",
+      job: "The Boss",
       img:
         "https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883423/person-4_t9nxjt.jpg",
       text:
@@ -51,7 +51,6 @@ let itemCurrent = 0;
 
 const showPerson = () => {
   const item = reviews[itemCurrent];
-  console.log(item);
   img.src = item.img;
   author.textContent = item.name;
   job.textContent = item.job;
@@ -61,7 +60,7 @@ const showPerson = () => {
 prevBtn.onclick = () => {
   itemCurrent --;
   if(itemCurrent < 0){
-    prevBtn.disabled = true;  
+    itemCurrent = 0
   }
   showPerson()
 }
@@ -69,8 +68,14 @@ prevBtn.onclick = () => {
 nextBtn.onclick = () => {
   itemCurrent ++;
   if(itemCurrent > reviews.length -1){
-    nextBtn.disabled = true;  
+    itemCurrent = reviews.length -1 
   }
   showPerson()
 }
 
+randomBtn.onclick = () => {
+  itemCurrent = Math.floor(Math.random()*reviews.length)
+  console.log(itemCurrent)
+  showPerson()
+
+}
